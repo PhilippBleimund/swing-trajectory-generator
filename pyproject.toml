@@ -1,0 +1,13 @@
+[project]
+name = "swinggen"
+version = "0.1.2"
+description = ""
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.5.3",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.11,<0.10.0"]
+build-backend = "uv_build"
