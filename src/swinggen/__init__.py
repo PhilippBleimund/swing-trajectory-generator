@@ -1,1 +1,1 @@
-from swinggen import *
+from .swinggen import *
