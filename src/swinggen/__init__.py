@@ -1,3 +1,1 @@
-from swinggen import Spline, AdjusterGui
-
-__all__ = ["Spline", "AdjusterGui"]
+import swinggen
