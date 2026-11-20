@@ -1,7 +1,6 @@
 import time
 import copy
 
-import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -62,8 +61,8 @@ class AdjusterGui:
     GUI class to experiment with different parameters of the trajectory points.
     """
 
-    def __init__(self, point_param_lists: list = None):
 
+    def __init__(self, point_param_lists: list = None):
         # Main Window configuration
         self.root = tk.Tk()
         self.root.configure(bg="white")
