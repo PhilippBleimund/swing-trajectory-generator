@@ -4,8 +4,6 @@ import copy
 import matplotlib.pyplot as plt
 import numpy as np
 
-import tkinter as tk
-
 
 class Spline:
     """
@@ -756,6 +754,7 @@ if __name__ == "__main__":
     # plot_splines(ex_points, pyplot_axs=axs)
     # plot_splines(ex_points, gen_splines_xy(ex_points, spline_generator=gen_spline_5), pyplot_axs=axs)
     # plt.show()
+    import tkinter as tk
     win_tk = AdjusterGui()
 
     # data = get_example_point_data_3D()
