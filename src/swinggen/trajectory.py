@@ -1,7 +1,17 @@
 import numpy as np
 from .swinggen import *
 
-class PushMotion:
+from abc import ABC, abstractmethod
+
+class Motion(ABC):
+    def __init__(self, points) -> None:
+        pass
+
+    @abstractmethod
+    def __call__(self, t):
+        pass
+
+class PushMotion(Motion):
     def __init__(self, points) -> None:
             points = np.asarray(points)
     
@@ -25,8 +35,8 @@ class PushMotion:
     def __call__(self, t):
         t = t % 1.0
         return [spline(t) for spline in self.splines_move]
-class SwingMotion:
-    def __init__(self, points):
+class SwingMotion(Motion):
+    def __init__(self, points) -> None:
         points = np.asarray(points)
 
         dt_move = 1.0
@@ -63,7 +73,7 @@ class SwingMotion:
         t = t % 1.0
         return [spline(t) for spline in self.splines_swing]
 
-class FullMotion:
+class FullMotion(Motion):
     """Periodic (T = 1.0) foot trajectory through three 3D waypoints.
 
     Args:
