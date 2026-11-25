@@ -20,9 +20,9 @@ class PushMotion(Motion):
     
             pos_move = [
                 [
-                    {"t": 0.5, "pos": points[2][0], "vel": v_move[0]},
-                    {"t": 0.5, "pos": points[2][1], "vel": v_move[1]},
-                    {"t": 0.5, "pos": points[2][2], "vel": v_move[2]},
+                    {"t": 0.0, "pos": points[2][0], "vel": v_move[0]},
+                    {"t": 0.0, "pos": points[2][1], "vel": v_move[1]},
+                    {"t": 0.0, "pos": points[2][2], "vel": v_move[2]},
                 ],
                 [
                     {"t": 1.0, "pos": points[0][0], "vel": v_move[0]},
@@ -57,14 +57,14 @@ class SwingMotion(Motion):
                 {"t": 0.0, "pos": points[0][2], "vel": v_move[2]},
             ],
             [  # mid swing at t = 0.25 
-                {"t": 0.25, "pos": points[1][0], "vel": v_mid[0]},
-                {"t": 0.25, "pos": points[1][1], "vel": v_mid[1]},
-                {"t": 0.25, "pos": points[1][2], "vel": v_mid[2]},
+                {"t": 0.5, "pos": points[1][0], "vel": v_mid[0]},
+                {"t": 0.5, "pos": points[1][1], "vel": v_mid[1]},
+                {"t": 0.5, "pos": points[1][2], "vel": v_mid[2]},
             ],
             [  # end of swing at t = 0.5
-                {"t": 0.5, "pos": points[2][0], "vel": v_move[0]},
-                {"t": 0.5, "pos": points[2][1], "vel": v_move[1]},
-                {"t": 0.5, "pos": points[2][2], "vel": v_move[2]},
+                {"t": 1.0, "pos": points[2][0], "vel": v_move[0]},
+                {"t": 1.0, "pos": points[2][1], "vel": v_move[1]},
+                {"t": 1.0, "pos": points[2][2], "vel": v_move[2]},
             ],
         ]
         self.splines_swing = gen_xyz(pos_swing, gen_poly_auto)
