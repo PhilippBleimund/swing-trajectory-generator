@@ -36,19 +36,13 @@ class PushMotion(Motion):
         t = t % 1.0
         return [spline(t) for spline in self.splines_move]
 class SwingMotion(Motion):
-    def __init__(self, points, velocity_unit) -> None:
+    def __init__(self, points, velocity) -> None:
         points = np.asarray(points)
 
-        dt_move = 1.0
-        v_move = (points[0] - points[2]) / np.linalg.norm(points[0] - points[2]) * velocity_unit
+        v_move = np.asarray(velocity, dtype=float)
 
-        d = points[2] - points[0]
-        norm_d = np.linalg.norm(d)
-        if norm_d == 0:
-            dir_02 = np.zeros(3)
-        else:
-            dir_02 = d / norm_d
-        v_mid = dir_02 * 1.0
+        v_mid = 1.5 * (points[2] - points[0]) - 0.5 * v_move
+        v_mid[2] = 0.0
 
         pos_swing = [
             [  # at t = 0
