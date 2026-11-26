@@ -40,7 +40,7 @@ class SwingMotion(Motion):
         points = np.asarray(points)
 
         dt_move = 1.0
-        v_move = np.linalg.norm(points[0] - points[2]) * velocity_unit
+        v_move = (points[0] - points[2]) / np.linalg.norm(points[0] - points[2]) * velocity_unit
 
         d = points[2] - points[0]
         norm_d = np.linalg.norm(d)
